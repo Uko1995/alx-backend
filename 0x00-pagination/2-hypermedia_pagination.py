@@ -2,7 +2,7 @@
 '''module implements a method in a class'''
 import csv
 import math
-from typing import List
+from typing import List, Dict
 index_range = __import__('0-simple_helper_function').index_range
 
 
@@ -37,7 +37,7 @@ class Server:
             return []
         return data[start:end]
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         '''returns a dictionary with the following:
         page_size, page, data, next_page, prev_page and total_pages
         '''

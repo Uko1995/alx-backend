@@ -24,8 +24,8 @@ class MRUCache(BaseCaching):
                 self.used_keys.remove(key)
             self.used_keys.append(key)
 
-        if len(self.cache_data) > self.MAX_ITEMS:
-            least = self.used_keys.pop(-1)
+        if len(self.cache_data.keys()) > self.MAX_ITEMS:
+            least = list(self.used_keys).pop(-1)
             del self.cache_data[least]
             print(f"DISCARD: {least}")
 

@@ -12,7 +12,7 @@ class MRUCache(BaseCaching):
         constructor method
         '''
         super().__init__()
-        self.used_keys = []
+        self.most_recent_key = None
     
     def put(self, key, item):
         """

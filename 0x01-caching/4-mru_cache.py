@@ -13,7 +13,7 @@ class MRUCache(BaseCaching):
         '''
         super().__init__()
         self.most_recent_key = None
-    
+
     def put(self, key, item):
         """
             A methods that adds an item to the cache.

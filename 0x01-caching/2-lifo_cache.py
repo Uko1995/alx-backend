@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-'''module that creates FIFOCache class from BaseCaching'''
+'''module that creates LIFOCache class from BaseCaching'''
 BaseCaching = __import__('base_caching').BaseCaching
 
 
-class FIFOCache(BaseCaching):
+class LIFOCache(BaseCaching):
     '''
     basic caching class
     '''
@@ -21,9 +21,9 @@ class FIFOCache(BaseCaching):
             self.cache_data[key] = item
 
         if len(self.cache_data) > self.MAX_ITEMS:
-            first_item = next(iter(self.cache_data))
-            del self.cache_data[first_item]
-            print(f"DISCARD: {first_item}")
+            last_item = list(self.cache_data.keys())[-2]
+            del self.cache_data[last_item]
+            print(f"DISCARD: {last_item}")
 
     def get(self, key):
         '''
